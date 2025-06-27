@@ -84,6 +84,9 @@ export default function ContactPage() {
         fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
         color: darkMode ? "#f9fafb" : "white",
         transition: "all 0.3s ease",
+        width: "100vw",
+        maxWidth: "100vw",
+        overflowX: "hidden",
       }}
     >
       <Header darkMode={darkMode} setDarkMode={setDarkMode} colorTheme={colorTheme} setColorTheme={setColorTheme} />
@@ -500,11 +503,22 @@ export default function ContactPage() {
           50% { transform: translateY(-10px); }
         }
 
+        .root-container { width: 100vw; max-width: 100vw; overflow-x: hidden; }
+        @media (max-width: 1024px) {
+          .contact-grid { grid-template-columns: 1fr 1fr !important; gap: 20px !important; }
+          .form-row { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+        }
         @media (max-width: 768px) {
-          h1 { font-size: 2.5rem !important; }
-          h2 { font-size: 2rem !important; }
-          .contact-grid { grid-template-columns: 1fr !important; }
-          .form-row { grid-template-columns: 1fr !important; }
+          h1 { font-size: 2rem !important; }
+          h2 { font-size: 1.3rem !important; }
+          .contact-grid { grid-template-columns: 1fr !important; gap: 8px !important; }
+          .form-row { grid-template-columns: 1fr !important; gap: 6px !important; }
+        }
+        @media (max-width: 480px) {
+          h1 { font-size: 1.1rem !important; }
+          h2 { font-size: 0.9rem !important; }
+          .contact-grid { gap: 3px !important; }
+          .form-row { gap: 2px !important; }
         }
       `}</style>
     </div>

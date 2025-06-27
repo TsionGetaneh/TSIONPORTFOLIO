@@ -59,6 +59,9 @@ export default function AboutPage() {
         fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
         color: darkMode ? "#f9fafb" : "white",
         transition: "all 0.3s ease",
+        width: "100vw",
+        maxWidth: "100vw",
+        overflowX: "hidden",
       }}
     >
       <Header darkMode={darkMode} setDarkMode={setDarkMode} colorTheme={colorTheme} setColorTheme={setColorTheme} />
@@ -135,7 +138,7 @@ export default function AboutPage() {
               to be part of <strong style={{ color: theme.primary }}>A2SV</strong>, where I continuously challenge
               myself with algorithmic problems to grow as an engineer.
 
-Along the way, I’ve had the chance to work with real companies and teams:
+Along the way, I've had the chance to work with real companies and teams:
 
 💼 At Weyra Tech, I gained hands-on experience working on web and mobile applications, collaborating in a fast-paced development environment.
 
@@ -359,10 +362,19 @@ Implemented a responsive, data-driven admin dashboard using Next.js, Tailwind CS
           50% { transform: translateY(-10px); }
         }
 
+        .root-container { width: 100vw; max-width: 100vw; overflow-x: hidden; }
+        @media (max-width: 1024px) {
+          .skills-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+        }
         @media (max-width: 768px) {
-          h1 { font-size: 2.5rem !important; }
-          h2 { font-size: 2rem !important; }
-          .skills-grid { grid-template-columns: 1fr !important; }
+          h1 { font-size: 2rem !important; }
+          h2 { font-size: 1.3rem !important; }
+          .skills-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+        }
+        @media (max-width: 480px) {
+          h1 { font-size: 1.1rem !important; }
+          h2 { font-size: 1rem !important; }
+          .skills-grid { gap: 4px !important; }
         }
       `}</style>
     </div>

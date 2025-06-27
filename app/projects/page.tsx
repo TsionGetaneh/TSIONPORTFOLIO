@@ -106,6 +106,9 @@ export default function ProjectsPage() {
         fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
         color: darkMode ? "#f9fafb" : "white",
         transition: "all 0.3s ease",
+        width: "100vw",
+        maxWidth: "100vw",
+        overflowX: "hidden",
       }}
     >
       <Header darkMode={darkMode} setDarkMode={setDarkMode} colorTheme={colorTheme} setColorTheme={setColorTheme} />
@@ -395,9 +398,19 @@ export default function ProjectsPage() {
           }
         }
 
+        .root-container { width: 100vw; max-width: 100vw; overflow-x: hidden; }
+        @media (max-width: 1024px) {
+          .projects-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+        }
         @media (max-width: 768px) {
-          h1 { font-size: 2.5rem !important; }
-          .projects-grid { grid-template-columns: 1fr !important; }
+          h1 { font-size: 2rem !important; }
+          .projects-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+          .project-card { padding: 10px !important; }
+        }
+        @media (max-width: 480px) {
+          h1 { font-size: 1.2rem !important; }
+          .projects-grid { gap: 4px !important; }
+          .project-card { padding: 4px !important; }
         }
       `}</style>
     </div>

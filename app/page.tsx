@@ -43,33 +43,43 @@ export default function HomePage() {
 
   return (
     <div
+      className="home-root"
       style={{
         minHeight: "100vh",
         background: darkMode ? "linear-gradient(135deg, #1f2937 0%, #111827 100%)" : theme.gradient,
         fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
         color: darkMode ? "#f9fafb" : "white",
         transition: "all 0.3s ease",
+        width: "100%",
+        maxWidth: "100%",
+        overflowX: "hidden",
       }}
     >
       <Header darkMode={darkMode} setDarkMode={setDarkMode} colorTheme={colorTheme} setColorTheme={setColorTheme} />
-
       <div
+        className="home-content"
         style={{
           paddingTop: "100px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           minHeight: "100vh",
-          padding: "100px 20px 20px",
+          padding: "100px 8px 20px",
+          width: "100%",
+          maxWidth: "100%",
+          boxSizing: "border-box",
         }}
       >
         <div
+          className="main-grid"
           style={{
-            maxWidth: "1200px",
+            width: "100%",
+            maxWidth: "100%",
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "60px",
+            gap: "32px",
             alignItems: "center",
+            boxSizing: "border-box",
           }}
         >
           {/* Profile Section */}
@@ -243,8 +253,8 @@ export default function HomePage() {
                 maxWidth: "600px",
               }}
             >
-              a passionate Software Engineering student at AAiT and a creative problem-solver participate in a2sv for DSA course in Python and backend developer . I love building functional, user-friendly applications with clean design and efficient code. Whether I’m working on mobile apps, web platforms, or exploring cybersecurity and system design, I bring curiosity, consistency, and creativity to everything I do.
-Let’s build something awesome together. 🚀 💫
+              a passionate Software Engineering student at AAiT and a creative problem-solver participate in a2sv for DSA course in Python and backend developer . I love building functional, user-friendly applications with clean design and efficient code. Whether I'm working on mobile apps, web platforms, or exploring cybersecurity and system design, I bring curiosity, consistency, and creativity to everything I do.
+Let's build something awesome together. 🚀 💫
             </p>
 
             <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", marginBottom: "40px" }}>
@@ -370,39 +380,48 @@ Let’s build something awesome together. 🚀 💫
       </div>
 
       <style jsx>{`
+        .home-root, .home-content, .main-grid { width: 100%; max-width: 100%; box-sizing: border-box; }
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-20px); }
         }
-        
         @keyframes rotate {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
         }
-        
         @keyframes bounce {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-15px); }
         }
-        
         @keyframes colorShift {
           0%, 100% { filter: hue-rotate(0deg); }
           50% { filter: hue-rotate(30deg); }
         }
-        
         @keyframes typewriter {
           0%, 50% { border-right-color: transparent; }
           51%, 100% { border-right-color: ${theme.primary}; }
         }
-        
         @keyframes pulse {
           0%, 100% { transform: scale(1); }
           50% { transform: scale(1.1); }
         }
-
+        .profile-section { text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding-top: 30px; border-top: 1px solid; }
+        @media (max-width: 1024px) {
+          .main-grid { gap: 24px !important; }
+          .profile-section { max-width: 350px !important; }
+        }
         @media (max-width: 768px) {
-          h1 { font-size: 2.5rem !important; }
-          .typewriter { font-size: 1.4rem !important; }
+          h1 { font-size: 2.1rem !important; }
+          .main-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .profile-section { width: 100% !important; max-width: 220px !important; margin: 0 auto 20px !important; }
+          .stats-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+        }
+        @media (max-width: 480px) {
+          h1 { font-size: 1.3rem !important; }
+          .main-grid { gap: 8px !important; }
+          .profile-section { max-width: 120px !important; height: 120px !important; }
+          .stats-grid { gap: 4px !important; }
         }
       `}</style>
     </div>
