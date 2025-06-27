@@ -65,20 +65,7 @@ const projects = [
     image: "/images/projects/weather-dashboard.jpg",
     github: "https://github.com/TsionGetaneh/weyra-master.git",
   },
-  {
-    title: "Social Media Analytics",
-    description: "Analytics dashboard for social media metrics with data visualization and reporting features.",
-    tech: ["Python", "Django", "D3.js"],
-    image: "/images/projects/social-analytics.jpg",
-    github: "https://github.com/yourusername/social-analytics",
-  },
-  {
-    title: "Blockchain Voting System",
-    description: "Secure voting system built on blockchain technology ensuring transparency and immutability of votes.",
-    tech: ["Solidity", "Web3.js", "Ethereum"],
-    image: "/images/projects/blockchain-voting.jpg",
-    github: "https://github.com/yourusername/blockchain-voting",
-  },
+  
 ]
 
 export default function ProjectsPage() {
